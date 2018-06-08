@@ -25,7 +25,7 @@ if __name__ == "__main__":
     for settings, options, env_vars, build_requires, reference in builder.items:
         modified_options = options.copy()
         if platform.system() == 'Linux':
-            modified_options['sdl2:esd=False'] = 'False'
+            modified_options['sdl2:esd'] = 'False'
             modified_options['sdl2:wayland'] = 'True'
             modified_options['sdl2:x11'] = 'True'
         filtered_builds.append([settings, modified_options, env_vars, build_requires])
